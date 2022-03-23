@@ -12,3 +12,6 @@ python manage.py makemigrations
 python manage.py migrate
 ## Стартуем:
 python manage.py runserver
+
+## Cостояние рабочего процесса
+![example workflow](https://github.com/kolosovdv/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
