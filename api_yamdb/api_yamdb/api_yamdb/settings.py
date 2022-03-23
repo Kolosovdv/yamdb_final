@@ -68,7 +68,7 @@ DATABASES = {
         'HOST': os.getenv('DB_HOST', default=None),
         'PORT': os.getenv('DB_PORT', default=None)
     }
-} 
+}
 
 AUTH_PASSWORD_VALIDATORS = [
     {
