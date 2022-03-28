@@ -68,7 +68,7 @@ jobs:
             file: api_yamdb/Dockerfile
             push: true
             #tags: ваш-логин-на-docker-hub/ваш-репозиторий-на-docker-hub:latest
-            tags: kolosovdv/final16
+            tags: kolosovdv/final16:latest
             #tags: kolosovdv/kolosovdv:latest
   deploy:
     runs-on: ubuntu-latest
