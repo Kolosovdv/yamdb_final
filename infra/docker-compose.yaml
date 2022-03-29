@@ -9,9 +9,6 @@ services:
       - ./.env
     
   web:
-    #build:
-      #context: ../
-      #dockerfile: api_yamdb/Dockerfile
     image: kolosovdv/final16:latest
     restart: always
     volumes:
