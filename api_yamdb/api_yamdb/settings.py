@@ -1,120 +1,245 @@
-import os
+import os 
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SECRET_KEY = 'p&l%385148kslhtyn^##a1)ilz@4zqj=rq&agdol^##zgl9(vs'
-DEBUG = True
+ 
 
-ALLOWED_HOSTS = ['*']
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) 
 
+SECRET_KEY = 'p&l%385148kslhtyn^##a1)ilz@4zqj=rq&agdol^##zgl9(vs' 
 
-INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'rest_framework',
-    'django_filters',
-    'rest_framework_simplejwt',
-    'api',
-    'reviews',
-]
+DEBUG = False 
 
-MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
-]
+ 
 
-ROOT_URLCONF = 'api_yamdb.urls'
+ALLOWED_HOSTS = ['*'] 
 
-TEMPLATES_DIR = os.path.join(BASE_DIR, "templates")
-TEMPLATES = [
-    {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATES_DIR],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-            ],
-        },
-    },
-]
+ 
 
-WSGI_APPLICATION = 'api_yamdb.wsgi.application'
+INSTALLED_APPS = [ 
 
+    'django.contrib.admin', 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+    'django.contrib.auth', 
 
+    'django.contrib.contenttypes', 
 
-AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
-]
+    'django.contrib.sessions', 
 
+    'django.contrib.messages', 
 
-LANGUAGE_CODE = 'en-us'
+    'django.contrib.staticfiles', 
 
-TIME_ZONE = 'UTC'
+    'rest_framework', 
 
-USE_I18N = True
+    'django_filters', 
 
-USE_L10N = True
+    'rest_framework_simplejwt', 
 
-USE_TZ = True
+    'api', 
 
+    'reviews', 
 
-STATIC_URL = '/static/'
+] 
 
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static/'),)
+ 
 
+MIDDLEWARE = [ 
 
-REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-    ),
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 10,
-}
+    'django.middleware.security.SecurityMiddleware', 
 
-AUTH_USER_MODEL = 'reviews.User'
+    'django.contrib.sessions.middleware.SessionMiddleware', 
 
-EMAIL_HOST = 'smtp.gmail.com'
+    'django.middleware.common.CommonMiddleware', 
 
-EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+    'django.middleware.csrf.CsrfViewMiddleware', 
 
-EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
+    'django.contrib.auth.middleware.AuthenticationMiddleware', 
 
-EMAIL_PORT = 587
+    'django.contrib.messages.middleware.MessageMiddleware', 
 
-EMAIL_USE_TLS = True
+    'django.middleware.clickjacking.XFrameOptionsMiddleware', 
 
-ROLES = {
-    'ADMIN_ROLE': 'admin',
-    'USER_ROLE': 'user',
-    'MODERATOR_ROLE': 'moderator',
-}
+] 
+
+ 
+
+ROOT_URLCONF = 'api_yamdb.urls' 
+
+ 
+
+TEMPLATES_DIR = os.path.join(BASE_DIR, "templates") 
+
+TEMPLATES = [ 
+
+    { 
+
+        'BACKEND': 'django.template.backends.django.DjangoTemplates', 
+
+        'DIRS': [TEMPLATES_DIR], 
+
+        'APP_DIRS': True, 
+
+        'OPTIONS': { 
+
+            'context_processors': [ 
+
+                'django.template.context_processors.debug', 
+
+                'django.template.context_processors.request', 
+
+                'django.contrib.auth.context_processors.auth', 
+
+                'django.contrib.messages.context_processors.messages', 
+
+            ], 
+
+        }, 
+
+    }, 
+
+] 
+
+ 
+
+WSGI_APPLICATION = 'api_yamdb.wsgi.application' 
+
+ 
+
+DATABASES = { 
+
+    'default': { 
+
+        'ENGINE': os.getenv('DB_ENGINE', default='django.db.backends.postgresql'), 
+
+        'NAME': os.getenv('DB_NAME', default=None), 
+
+        'USER': os.getenv('POSTGRES_USER', default=None), 
+
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD', default=None), 
+
+        'HOST': os.getenv('DB_HOST', default=None), 
+
+        'PORT': os.getenv('DB_PORT', default=None) 
+
+    } 
+
+} 
+
+ 
+
+AUTH_PASSWORD_VALIDATORS = [ 
+
+    { 
+
+        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator', 
+
+    }, 
+
+    { 
+
+        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator', 
+
+    }, 
+
+    { 
+
+        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator', 
+
+    }, 
+
+    { 
+
+        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator', 
+
+    }, 
+
+] 
+
+ 
+
+ 
+
+LANGUAGE_CODE = 'en-us' 
+
+ 
+
+TIME_ZONE = 'UTC' 
+
+ 
+
+USE_I18N = True 
+
+ 
+
+USE_L10N = True 
+
+ 
+
+USE_TZ = True 
+
+ 
+
+STATIC_URL = '/static/' 
+
+ 
+
+# STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static/'),) 
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static') 
+
+ 
+
+MEDIA_URL = '/media/' 
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media') 
+
+ 
+
+REST_FRAMEWORK = { 
+
+    'DEFAULT_AUTHENTICATION_CLASSES': ( 
+
+        'rest_framework_simplejwt.authentication.JWTAuthentication', 
+
+    ), 
+
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination', 
+
+    'PAGE_SIZE': 10, 
+
+} 
+
+ 
+
+AUTH_USER_MODEL = 'reviews.User' 
+
+ 
+
+EMAIL_HOST = 'smtp.gmail.com' 
+
+ 
+
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER') 
+
+ 
+
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD') 
+
+ 
+
+EMAIL_PORT = 587 
+
+ 
+
+EMAIL_USE_TLS = True 
+
+ 
+
+ROLES = { 
+
+    'ADMIN_ROLE': 'admin', 
+
+    'USER_ROLE': 'user', 
+
+    'MODERATOR_ROLE': 'moderator', 
+
+} 
