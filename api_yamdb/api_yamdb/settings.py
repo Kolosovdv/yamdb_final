@@ -8,9 +8,9 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
-INSTALLED_APPS = [ 
+INSTALLED_APPS = [
 
-    'django.contrib.admin', 
+    'django.contrib.admin',
 
     'django.contrib.auth', 
 
@@ -33,7 +33,7 @@ INSTALLED_APPS = [
     'reviews', 
 
 ] 
-
+c
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
