@@ -28,3 +28,4 @@ docker-compose exec web python manage.py collectstatic --no-input
 
 
 ![example workflow](https://github.com/Kolosovdv/yamdb_final/actions/workflows/docker-compose.yaml/badge.svg)
+http://62.84.115.146/admin/login/?next=/admin/ 
