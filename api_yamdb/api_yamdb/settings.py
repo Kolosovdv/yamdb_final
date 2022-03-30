@@ -34,31 +34,17 @@ INSTALLED_APPS = [
 
 ] 
 
- 
-
-MIDDLEWARE = [ 
-
-    'django.middleware.security.SecurityMiddleware', 
-
-    'django.contrib.sessions.middleware.SessionMiddleware', 
-
-    'django.middleware.common.CommonMiddleware', 
-
-    'django.middleware.csrf.CsrfViewMiddleware', 
-
-    'django.contrib.auth.middleware.AuthenticationMiddleware', 
-
-    'django.contrib.messages.middleware.MessageMiddleware', 
-
-    'django.middleware.clickjacking.XFrameOptionsMiddleware', 
-
-] 
-
- 
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
 
 ROOT_URLCONF = 'api_yamdb.urls' 
-
- 
 
 TEMPLATES_DIR = os.path.join(BASE_DIR, "templates") 
 
