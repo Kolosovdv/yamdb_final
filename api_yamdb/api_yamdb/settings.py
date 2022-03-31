@@ -84,13 +84,10 @@ DATABASES = {
 
     'default': { 
 
-        'ENGINE': os.getenv('DB_ENGINE', default='django.db.backends.postgresql'), 
-
-        'NAME': os.getenv('DB_NAME', default='postgres'), 
-
-        'USER': os.getenv('POSTGRES_USER', default='yatube_user1'), 
-
-        'PASSWORD': os.getenv('POSTGRES_PASSWORD', default='xxxyyyzzz'), 
+        'ENGINE': os.getenv('DB_ENGINE', default='django.db.backends.postgresql'),
+        'NAME': os.getenv('DB_NAME', default='postgres'),
+        'USER': os.getenv('POSTGRES_USER', default='yatube_user1'),
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD', default='xxxyyyzzz'),
 
         'HOST': os.getenv('DB_HOST', default='db'), 
 
