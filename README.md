@@ -28,7 +28,7 @@ docker-compose exec web python manage.py collectstatic --no-input
 
 
 ![example workflow]
-(https://github.com/Kolosovdv/yamdb_final/actions/workflows/workflows/yamdb_workflow.yml/badge.svg)
+( https://github.com/Kolosovdv/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
 
 http://62.84.115.146/redoc/ 
